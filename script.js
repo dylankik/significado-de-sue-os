@@ -1,23 +1,25 @@
-// Ejemplo de un diccionario de sueños
 const diccionarioSuenos = {
     "caer": "Caer en un sueño puede simbolizar la pérdida de control.",
     "volar": "Soñar que vuelas a menudo representa libertad y poder.",
-    // Agrega más sueños y sus significados aquí
+    "agua": "El agua puede simbolizar emociones y el subconsciente.",
+    "fuego": "El fuego puede representar pasión o ira.",
 };
 
-// Función para buscar el significado
-function buscarSignificado(sueno) {
-    const resultado = diccionarioSuenos[sueno.toLowerCase()];
-    if (resultado) {
-        return resultado;
-    } else {
-        return "Lo sentimos, no se encontró el significado de ese sueño.";
-    }
-}
+// Sinónimos
+const sinónimos = {
+    "caer": ["caer", "desplomarse", "caída"],
+    "volar": ["volar", "elevarse", "flotar"],
+    "agua": ["agua", "líquido", "fluido"],
+    "fuego": ["fuego", "llama", "incendio"],
+};
 
-// Manejo del evento de búsqueda
-document.getElementById("buscarBtn").addEventListener("click", function() {
-    const suenoInput = document.getElementById("suenosInput").value;
-    const resultado = buscarSignificado(suenoInput);
-    document.getElementById("resultado").innerText = resultado;
-});
+function buscarSignificado(sueno) {
+    // Buscar en el diccionario usando sinónimos
+    for (const clave in sinónimos) {
+        if (sinónimos[clave].includes(sueno.toLowerCase())) {
+            return diccionarioSuenos[clave];
+        }
+    }
+    
+    return "Lo sentimos, no se encontró el significado de ese sueño.";
+}
