@@ -1,4 +1,5 @@
 const diccionarioSuenos = {
+    "Soñe que me cai": "Soñar que te caes simboliza que estas perdiendo el control"
     "caer": "Caer en un sueño puede simbolizar la pérdida de control.",
     "volar": "Soñar que vuelas a menudo representa libertad y poder.",
     "agua": "El agua puede simbolizar emociones y el subconsciente.",
